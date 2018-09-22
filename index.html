@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fight</title>
+    <style>
+         body{
+            margin: 0; 
+            padding: 0;
+         }
+        .background{
+            background: url('./fire.gif') 0 0 no-repeat;
+            height: 100%;
+            width: 100%;
+            background-size: cover;
+            position: fixed;
+        }
+        .fighter1{
+            background: url('./k.png') 0 0 no-repeat;
+            position: fixed;
+            bottom: 95px;
+            left: 375px;
+            margin: auto;
+            width: 270px;
+            height: 270px;
+            animation: kick 1s steps(8) infinite;
+        }
+
+        @keyframes kick{
+            from {
+                background-position: 0 0;
+            }
+            to {
+                background-position: -2160px 0;
+            }
+        }
+        .fighter2{
+            background: url('./b.png')  0 0 no-repeat;
+            position: fixed;
+            bottom: 100px;
+            left: 600px;
+            width: 270px;
+            height: 270px;
+            animation: throw 1s steps(7) infinite;
+            transform: scaleX(-1);
+        }
+
+        @keyframes throw{
+            from {
+                background-position: 0 0;
+            }
+            to {
+                background-position: -1870px 0;
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+    <div class="fighter1"></div>
+    <div class="fighter2"></div>
+    <button type="button">Play</button>
+    <audio id="audio" autoplay loop controls>
+        <source src="audio.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+         document.getElementById('audio').play();
+    </script>
+</body>
+</html>
